@@ -1,3 +1,9 @@
+Salsabila Aulia
+2206082190
+PBP C
+
+https://salsa-tugas-2.adaptable.app/main/
+
 ###1.	Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 #####	Membuat sebuah proyek Django baru.
 1.	Membuat folder dengan nama “Tugas 2”

@@ -7,7 +7,9 @@ def show_main(request):
         'amount': 100,
         'description' : 'Mascara is a cosmetic commonly used to enhance the upper and lower eyelashes.',
         'price' : 100000,
-        'category' : 'Makeup'
+        'category' : 'Makeup',
+        'nama' : 'Salsabila Aulia',
+        'kelas' : 'PBP C',
 
     }
 

@@ -1,18 +1,40 @@
-<h1>Shopee</h1>
-<h4>{{ nama }}</h4>
-<h4>{{ kelas }}</h4>
+{% extends 'base.html' %}
 
-<h5>Name: </h5>
-<p>{{ name }}</p> 
+{% block content %}
+    <h1>Shopee</h1>
+    <h4>{{ nama }}</h4>
+    <h4>{{ kelas }}</h4>
 
-<h5>Amount: </h5>
-<p>{{ amount }}</p> 
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Category</th>
+    </tr>
 
-<h5>Description: </h5>
-<p>{{ description }}</p>
+    {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
 
-<h5>Price: </h5>
-<p>{{ price }}</p> 
+    {% for product in products %}
+        <tr>
+            <td>{{product.name}}</td>
+            <td>{{product.amount}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.category}}</td>
+        </tr>
+    {% endfor %}
+</table>
 
-<h5>Category: </h5>
-<p>{{ category }}</p>
+<h4>Kamu menyimpan {{ products|length }} jenis item pada aplikasi ini</h4>
+
+<br />
+
+<a href="{% url 'main:create_product' %}">
+    <button>
+        Tambahkan Barang
+    </button>
+</a>
+
+{% endblock content %}

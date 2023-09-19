@@ -58,16 +58,16 @@ JSON    : JSON adalah format file format pertukaran data yang menggunakan teks y
 ######create-product (html)
 [![Screenshot-2023-09-19-at-11-07-32.png](https://i.postimg.cc/ZR2t6hVL/Screenshot-2023-09-19-at-11-07-32.png)](https://postimg.cc/zbCc14mL)
 
-######xml
+###### xml
 [![Screenshot-2023-09-19-at-11-07-48.png](https://i.postimg.cc/05KqPbyX/Screenshot-2023-09-19-at-11-07-48.png)](https://postimg.cc/9z2kBXTy)
 
-######json
+###### json
 [![Screenshot-2023-09-19-at-11-07-56.png](https://i.postimg.cc/ZKkzR49b/Screenshot-2023-09-19-at-11-07-56.png)](https://postimg.cc/JtQ2Ywcv)
 
-######xml by id
+###### xml by id
 [![Screenshot-2023-09-19-at-11-08-02.png](https://i.postimg.cc/FzStZn6X/Screenshot-2023-09-19-at-11-08-02.png)](https://postimg.cc/PvdFfKhS)
 
-######json by id
+###### json by id
 [![Screenshot-2023-09-19-at-11-08-08.png](https://i.postimg.cc/Bn4WTpcR/Screenshot-2023-09-19-at-11-08-08.png)](https://postimg.cc/F7Wnmj6x)
 
 ##### Referensi

@@ -45,18 +45,21 @@ JSON    : JSON adalah format file format pertukaran data yang menggunakan teks y
 4. membuat form input data "forms.py" pada folder main dan menambahkan model dan field dari model tersebut
 5. konfigurasi urls.py dan menambahkan path url
 6. buat "create_product.html" pada folder templates/main untuk membuat input form
-7. konfigurasi main.html untuk menampilkan data dalam format html
+7. migrasi karena terdapat model baru product
+8. membuat fungsi create_product yang memiliki parameter request dan id dan mereturn HTTPResponse yang berisi parameter data hasil query yang sudah diserialisasi setiap format
 
 #####   Tambahkan 5 fungsi views untuk melihat objek yang sudah ditambahkan dalam format HTML, XML, JSON, XML by ID, dan JSON by ID.
-1. membuat fungsi create_product, show_xml, show_json yang memiliki parameter request dan show_xml_by_id, show_json_by_id memiliki parameter request dan id dan mereturn HTTPResponse yang berisi parameter data hasil query yang sudah diserialisasi setiap format
+1. membuat fungsi show_main, show_xml, show_json yang memiliki parameter request dan show_xml_by_id, show_json_by_id memiliki parameter request dan id dan mereturn HTTPResponse yang berisi parameter data hasil query yang sudah diserialisasi setiap format
+2. show_main akan menampilkan data-data yang telah diisi pada link ""
+3. konfigurasi main.html untuk menampilkan data dalam format html
 
 #####   Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2.
 1. konfigurasi "urls.py" pada folder main dan mengimport 5 fungsi tersebut
 2. menambahkan path url ke dalam urlpatterns agar dapat mengakses 5 fungsi tersebut
 
 ### 5.	Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
-######create-product (html)
-[![Screenshot-2023-09-19-at-11-07-32.png](https://i.postimg.cc/ZR2t6hVL/Screenshot-2023-09-19-at-11-07-32.png)](https://postimg.cc/zbCc14mL)
+###### html
+[![Screenshot-2023-09-20-at-10-26-32.png](https://i.postimg.cc/28mgh4Zq/Screenshot-2023-09-20-at-10-26-32.png)](https://postimg.cc/14CWZVMP)
 
 ###### xml
 [![Screenshot-2023-09-19-at-11-07-48.png](https://i.postimg.cc/05KqPbyX/Screenshot-2023-09-19-at-11-07-48.png)](https://postimg.cc/9z2kBXTy)

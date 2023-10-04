@@ -1,52 +1,51 @@
 #### Salsabila Aulia
 #### 2206082190
 #### PBP C
+#### Tugas 5
 
-### 1.	Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
-Django UserCreationForm adalah salah satu bentuk dari Django forms yang digunakan untuk membuat formulir pendaftaran atau registrasi pengguna dalam aplikasi web. Kelebihan dari penggunaan UserCreationForm adalah:
-- Integrasi dengan Django User Model: Form ini sudah terintegrasi dengan model pengguna bawaan Django (User model) sehingga memudahkan pembuatan dan penyimpanan akun pengguna.
-- Validasi Otomatis: Form ini melakukan validasi otomatis terhadap berbagai aspek seperti kata sandi yang cocok, email yang valid, dan lainnya.
-- Fleksibilitas Kustomisasi: Meskipun form ini dapat digunakan sebagaimana adanya, Anda juga dapat menyesuaikannya sesuai dengan kebutuhan aplikasi Anda dengan mudah.
-Kelemahannya adalah:
-- Keterbatasan Desain: Secara default, UserCreationForm memiliki desain yang sederhana dan mungkin memerlukan penyesuaian tambahan untuk mencocokkan tampilan aplikasi Anda.
-- Kustomisasi yang Rumit: Jika Anda perlu melakukan kustomisasi yang lebih kompleks, mungkin perlu penyesuaian yang lebih mendalam di luar form ini.
+### 1.	Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
+Element selector adalah salah satu jenis selector dalam CSS yang digunakan untuk memilih elemen-elemen HTML berdasarkan jenis atau nama elemennya. 
+Dengan menggunakan selector ini, kita dapat dengan mudah mengaplikasikan gaya ke semua elemen dengan jenis yang sama dalam dokumen HTML. Misalnya, jika kita ingin mengubah warna teks pada semua elemen <p> menjadi biru, kita dapat menggunakan selector <p>.
 
-### 2.	Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
-Autentikasi adalah proses verifikasi identitas pengguna. Dalam Django, ini sering terkait dengan login pengguna ke dalam aplikasi. Otorisasi adalah proses mengendalikan apa yang dapat dilakukan pengguna yang sudah diotentikasi dalam aplikasi, yaitu menentukan izin dan akses apa yang dimiliki oleh pengguna tersebut. Perbedaan utama adalah autentikasi mengidentifikasi siapa pengguna, sedangkan otorisasi mengidentifikasi apa yang diizinkan pengguna lakukan dalam aplikasi.
 
-Keduanya penting karena autentikasi memastikan bahwa hanya pengguna yang sah yang dapat mengakses aplikasi, sementara otorisasi memastikan bahwa pengguna hanya dapat melakukan tindakan yang diizinkan sesuai peran dan izin mereka. Tanpa autentikasi, aplikasi rentan terhadap akses oleh pihak yang tidak berwenang. Tanpa otorisasi, pengguna mungkin mendapatkan akses lebih dari yang seharusnya mereka miliki.
+### 2.	Jelaskan HTML5 Tag yang kamu ketahui.
+- <header>: Digunakan untuk mengelompokkan elemen-elemen yang merupakan bagian atas (header) dari sebuah dokumen atau bagian dari dokumen. Biasanya digunakan untuk judul, logo, navigasi, dan elemen header lainnya.
+- <nav>: Menandakan elemen yang berisi navigasi situs web, seperti menu atau tautan ke berbagai halaman atau bagian dalam situs.
+- <div>: Mengelompokkan dan mengatur elemen-elemen HTML lainnya di dalamnya.
+- <button>: Membuat tombol interaktif yang dapat digunakan oleh pengguna untuk berbagai tujuan dalam halaman web.
+- <table>: Menggambarkan struktur dasar tabel. 
 
-### 3.	Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
-Cookies dalam konteks aplikasi web adalah file teks kecil yang disimpan di komputer pengguna oleh browser saat berinteraksi dengan situs web. Cookies digunakan untuk menyimpan informasi sesi atau pengaturan pengguna, seperti informasi login, preferensi, atau riwayat pembelian. Django menggunakan cookies untuk mengelola data sesi pengguna dengan menyimpan token unik di cookie yang kemudian digunakan untuk mengidentifikasi sesi pengguna pada server.
+### 3.	Jelaskan perbedaan antara margin dan padding.
+Margin:
+- Margin adalah ruang di luar elemen: Margin adalah jarak antara tepi luar elemen HTML dengan elemen-elemen lain di sekitarnya.
+- Memengaruhi tata letak elemen: Margin memengaruhi tata letak elemen terhadap elemen-elemen tetangga. Jika Anda memberikan elemen margin atas, maka elemen tersebut akan diberi jarak di atas elemen tetangganya.
+- Tidak memiliki latar belakang atau warna: Margin adalah area transparan dan biasanya tidak memiliki latar belakang atau warna.
 
-### 4.	Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
-Penggunaan cookies secara default tidak sepenuhnya aman dalam pengembangan web. Ada beberapa risiko potensial yang harus diwaspadai:
-- Cross-Site Scripting (XSS): Serangan XSS dapat memungkinkan penyerang untuk mencuri informasi dari cookies pengguna. Oleh karena itu, perlu tindakan pencegahan yang baik dalam aplikasi web untuk menghindari risiko ini.
-- Cross-Site Request Forgery (CSRF): Penyerang dapat memanfaatkan cookies untuk melakukan serangan CSRF, yang dapat menyebabkan tindakan tidak diinginkan di akun pengguna tanpa izin mereka.
-- Data Sensitif: Cookies dapat menyimpan data sensitif seperti token otentikasi. Penting untuk mengenkripsi data sensitif dalam cookies dan hanya menyimpan data yang benar-benar diperlukan.
+Padding:
+- Padding adalah ruang di dalam elemen: Padding adalah jarak antara batas elemen dan kontennya. Dalam kata lain, itu adalah ruang di dalam elemen tersebut.
+- Memengaruhi tampilan konten: Padding memengaruhi penampilan konten di dalam elemen. Jika Anda memberikan elemen padding atas, maka konten di dalam elemen tersebut akan diberi jarak dari tepi atas elemen tersebut.
+- Dapat memiliki latar belakang atau warna: Padding dapat memiliki latar belakang atau warna yang berbeda daripada elemen itu sendiri, sehingga memungkinkan untuk memberi elemen efek visual.
+
+### 4.	Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+
+Tailwind CSS:
+- Utility-First Approach: Tailwind CSS adalah pendekatan "Utility-First," yang berarti menggabungkan kelas utilitas ke elemen HTML. Ini memungkinkan membuat tampilan yang sangat disesuaikan dan efisien.
+- Konfigurasi Lebih Fleksibel: Tailwind CSS memungkinkan Anda untuk menyesuaikan konfigurasi dan gaya tampilan secara ekstensif melalui file konfigurasi JavaScript.
+- Ringan: Tailwind CSS memiliki ukuran yang lebih kecil daripada Bootstrap, sehingga dapat menghasilkan halaman web yang lebih cepat.
+- Tidak Memiliki Desain Bawaan: Tailwind CSS tidak memiliki desain bawaan seperti Bootstrap, sehingga perlu merancang tampilan sendiri dari awal.
+
+Bootstrap:
+- Component-Based: Bootstrap adalah framework yang berbasis komponen. Dapat dengan mudah menggunakan komponen-komponen siap pakai seperti navigasi, kartu, formulir, dll.
+- Desain Bawaan: Bootstrap memiliki desain bawaan yang sangat baik dan estetis. Jadi, jika Anda membutuhkan tampilan yang terlihat bagus dengan sedikit usaha, Bootstrap bisa menjadi pilihan yang baik.
+- Lebih Mudah untuk Pemula: Bootstrap lebih mudah digunakan untuk pemula karena banyak komponennya sudah ada, dan Anda hanya perlu menggabungkannya.
+- Lebih Tidak Fleksibel: Bootstrap kurang fleksibel daripada Tailwind CSS dalam hal penyesuaian tampilan.
+
+Kapan Menggunakan Bootstrap atau Tailwind CSS:
+
+- Bootstrap: Jika membutuhkan prototipe cepat, tidak memiliki banyak waktu untuk merancang tampilan dari awal, atau ingin tampilan yang sudah estetis, Bootstrap bisa menjadi pilihan yang baik. Juga, jika kita pemula dalam pengembangan web, Bootstrap menyediakan banyak komponen siap pakai.
+- Menggunakan Tailwind CSS: Jika ingin kontrol yang lebih besar atas tampilan, ingin membangun tampilan yang sangat disesuaikan, atau jika lebih berpengalaman dalam CSS, Tailwind CSS bisa menjadi pilihan yang lebih baik.Memberikan fleksibilitas yang lebih besar dalam mendesain tampilan.
 
 ### 5.	Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
-#####   Mengimplementasikan fungsi registrasi, login, dan logout untuk memungkinkan pengguna untuk mengakses aplikasi sebelumnya dengan lancar.
-1. membuat fungsi register pada "views.py" folder main agar formulir registrasi terbuat secara otomatis dan menghasilkan akun pengguna ketika membuat akun.
-2. membuat page register di file baru "register.html" pada folder main/templates.
-3. membuat fungsi login_user pada "views.py" folder main untuk mengautentikasi user yang ingin login.
-4. membuat page login di file baru "login.html" pada folder main/templates.
-5. membuat fungsi logout_user pada "views.py" folder main untuk menghapus sesi user yang saat ini masuk.
-6. membuat page login di file baru "login.html" pada folder main/templates.
-7. menambahkan path url ke dalam urlpatterns "urls.py" untuk mengakses fungsi register, login_user, logout_user.
-8. merestriksi halaman main dengan menambahkan "@login_required(login_url='/login')" di atas fungsi show_main "views.py" pada folder main.
-
-#####   Menghubungkan model Item dengan User.
-1. konfigurasi "models.py" pada folder main untuk menghubungkan models nama dengan user agar tampilan menampilkan username yang sedang login.
-2. konfigurasi "views.py" pada folder main agar menyimpan objek sesuai dengan user yang mensubmit item tersebut/
-3. melakukan migrasi karena kita merubah model
-
-#####   Menampilkan detail informasi pengguna yang sedang logged in seperti username dan menerapkan cookies seperti last login pada halaman utama aplikasi.
-1. konfigurasi fungsi login_user "views.py" pada folder main untuk menambahkan cookie bernama last_login untuk melihat kapan terakhir kali user melakukan login.
-2. konfigurasi fungsi show_main "views.py" pada folder main untuk menambahkan informasi cookie last_login pada context
-3. konfigurasi fungsi logout "views.py" pada folder main untuk menghapus cookies saat user logout
-4. menambahkan teks sesi terakhir login pada "main.html" pada folder main/templates
-
-#####   Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada aplikasi sebelumnya untuk setiap akun di lokal.
-[![Screenshot-2023-09-26-at-18-26-47.png](https://i.postimg.cc/jSTQ46XL/Screenshot-2023-09-26-at-18-26-47.png)](https://postimg.cc/crDnsnPS)
-[![Screenshot-2023-09-26-at-18-26-54.png](https://i.postimg.cc/HnBHv9Md/Screenshot-2023-09-26-at-18-26-54.png)](https://postimg.cc/V0r3dM4V)
+1. Di dalam bagian <head> dari base.html, menambahkan link referensi CSS Bootstrap dan JavaScript Bootstrap
+2. Konfigurasi pengaturan STATIC_URL dan STATICFILES_DIRS untuk mengonfigurasi penanganan file statis (CSS, JS, gambar, dll.) pada settings.py
+3. Buka template HTML untuk halaman Login, Register, Main, dan Create Product dan menambahkan kelas CSS Bootstrap ke elemen HTML

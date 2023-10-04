@@ -19,12 +19,16 @@ from django.urls import reverse
 @login_required(login_url='/login')
 def show_main(request):
     items = Item.objects.filter(user=request.user)
-
+    if 'last_login' in request.COOKIES:
+        last_login = request.COOKIES['last_login']
+    else:
+        last_login = 'N/A' 
+    
     context = {
         'user' : request.user.username,
         'kelas' : 'PBP C',
         'items': items,
-        'last_login': request.COOKIES['last_login'],
+        'last_login': last_login,
         
     }
 

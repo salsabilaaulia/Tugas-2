@@ -55,19 +55,19 @@
     
     <tbody>
         {% for item in items %}
-        <tr></tr>
-            <td class="px-3" scope="row">{{item.name}}</td>
-            <td> 
+        <tr>
+            <td {% if forloop.last %} style="background-color: #d77ba0;"{% endif %} class="px-3" scope="row">{{item.name}}</td>
+            <td {% if forloop.last %} style="background-color: #d77ba0;"{% endif %}> 
                 <div class="d-flex justify-content-between align-items-center">
                 <button class="btn btn-light" onclick="window.location.href='{% url 'main:decrement_amount' item.id %}'">-</button>
                 <span id="amount{{ item.id }}">{{ item.amount }}</span>
                 <button class="btn btn-light" onclick="window.location.href='{% url 'main:increment_amount' item.id %}'">+</button>
                 </div>
             </td>
-            <td>{{item.description}}</td>
-            <td>{{item.price}}</td>
-            <td>{{item.category}}</td>
-            <td class="text-center align-middle"><button class="btn btn-secondary btn-sm" onclick="window.location.href='{% url 'main:delete_item' item.id %}'">Hapus</button></td>
+            <td {% if forloop.last %} style="background-color: #d77ba0;"{% endif %} >{{item.description}}</td>
+            <td {% if forloop.last %} style="background-color: #d77ba0;"{% endif %}>{{item.price}}</td>
+            <td {% if forloop.last %} style="background-color: #d77ba0;"{% endif %}>{{item.category}}</td>
+            <td {% if forloop.last %} style="background-color: #d77ba0;"{% endif %} class="text-center align-middle"><button class="btn btn-secondary btn-sm" onclick="window.location.href='{% url 'main:delete_item' item.id %}'">Hapus</button></td>
         </tr>
         {% endfor %}
     </tbody>

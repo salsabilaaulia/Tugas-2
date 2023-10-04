@@ -5,15 +5,15 @@
 
 ### 1.	Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
 Element selector adalah salah satu jenis selector dalam CSS yang digunakan untuk memilih elemen-elemen HTML berdasarkan jenis atau nama elemennya. 
-Dengan menggunakan selector ini, kita dapat dengan mudah mengaplikasikan gaya ke semua elemen dengan jenis yang sama dalam dokumen HTML. Misalnya, jika kita ingin mengubah warna teks pada semua elemen <p> menjadi biru, kita dapat menggunakan selector <p>.
+Dengan menggunakan selector ini, kita dapat dengan mudah mengaplikasikan gaya ke semua elemen dengan jenis yang sama dalam dokumen HTML. Misalnya, jika kita ingin mengubah warna teks pada semua elemen p menjadi biru, kita dapat menggunakan selector p.
 
 
 ### 2.	Jelaskan HTML5 Tag yang kamu ketahui.
-- <header>: Digunakan untuk mengelompokkan elemen-elemen yang merupakan bagian atas (header) dari sebuah dokumen atau bagian dari dokumen. Biasanya digunakan untuk judul, logo, navigasi, dan elemen header lainnya.
-- <nav>: Menandakan elemen yang berisi navigasi situs web, seperti menu atau tautan ke berbagai halaman atau bagian dalam situs.
-- <div>: Mengelompokkan dan mengatur elemen-elemen HTML lainnya di dalamnya.
-- <button>: Membuat tombol interaktif yang dapat digunakan oleh pengguna untuk berbagai tujuan dalam halaman web.
-- <table>: Menggambarkan struktur dasar tabel. 
+- header: Digunakan untuk mengelompokkan elemen-elemen yang merupakan bagian atas (header) dari sebuah dokumen atau bagian dari dokumen. Biasanya digunakan untuk judul, logo, navigasi, dan elemen header lainnya.
+- nav: Menandakan elemen yang berisi navigasi situs web, seperti menu atau tautan ke berbagai halaman atau bagian dalam situs.
+- div: Mengelompokkan dan mengatur elemen-elemen HTML lainnya di dalamnya.
+- button: Membuat tombol interaktif yang dapat digunakan oleh pengguna untuk berbagai tujuan dalam halaman web.
+- table: Menggambarkan struktur dasar tabel. 
 
 ### 3.	Jelaskan perbedaan antara margin dan padding.
 Margin:

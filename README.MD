@@ -2,6 +2,7 @@
 #### 2206082190
 #### PBP C
 #### Tugas 6
+#### http://salsabila-aulia21-tugas.pbp.cs.ui.ac.id/
 
 ### 1.	Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
 - Synchronous Programming (Blocking): Tugas-tugas dieksekusi satu per satu dalam urutan yang ditentukan. Ketika satu tugas dijalankan, program akan menunggu sampai tugas tersebut selesai sebelum melanjutkan ke tugas berikutnya. Ini berarti tugas-tugas dalam mode sinkron memblokir eksekusi program sampai tugas saat ini selesai.

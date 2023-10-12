@@ -24,62 +24,132 @@
 </nav>
 
 
-
     
 <div class="px-5 py-2">
 
     <div class="card px-4 py-2 mb-4 text-end">
-            <a href="{% url 'main:create_product' %}">
-                <button class="btn btn-primary">
-                    Tambahkan Barang
+        <div>
+        <a>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Tambahkan Matkul by AJAX</button>
+        </a>
+        <a href="{% url 'main:create_product' %}">       <button class="btn btn-primary">
+                    Tambahkan Matkul
                 </button>
             </a>
+        </div>
     </div>
 
-<div class="card p-4 mb-4">
-    
-<table class="table table-hover table-bordered ">
-    <thead class="table-dark">
-    <tr>
-        <th scope="col" class="text-center align-middle">Nama Matkul</th>
-        <th scope="col" class="text-center align-middle">SKS</th>
-        <th scope="col" class="text-center align-middle">Deskripsi</th>
-        <th scope="col" class="text-center align-middle">Kapasitas</th>
-        <th scope="col" class="text-center align-middle">Kategori</th>
-        <th scope="col" class="text-center align-middle">Edit</th>
-    </tr>
-    </thead>
-
-    {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
-
-    
-    <tbody>
-        {% for item in items %}
-        <tr>
-            <td {% if forloop.last %} style="background-color: #d77ba0;"{% endif %} class="px-3" scope="row">{{item.name}}</td>
-            <td {% if forloop.last %} style="background-color: #d77ba0;"{% endif %}> 
-                <div class="d-flex justify-content-between align-items-center">
-                <button class="btn btn-light" onclick="window.location.href='{% url 'main:decrement_amount' item.id %}'">-</button>
-                <span id="amount{{ item.id }}">{{ item.amount }}</span>
-                <button class="btn btn-light" onclick="window.location.href='{% url 'main:increment_amount' item.id %}'">+</button>
-                </div>
-            </td>
-            <td {% if forloop.last %} style="background-color: #d77ba0;"{% endif %} >{{item.description}}</td>
-            <td {% if forloop.last %} style="background-color: #d77ba0;"{% endif %}>{{item.price}}</td>
-            <td {% if forloop.last %} style="background-color: #d77ba0;"{% endif %}>{{item.category}}</td>
-            <td {% if forloop.last %} style="background-color: #d77ba0;"{% endif %} class="text-center align-middle"><button class="btn btn-secondary btn-sm" onclick="window.location.href='{% url 'main:delete_item' item.id %}'">Hapus</button></td>
-        </tr>
-        {% endfor %}
-    </tbody>
-    
-</table>
-</div>
+    <div class="card p-4 mb-4"id="product_table">
+    </div>
 
 <h4>Kamu menyimpan {{ items|length }} jenis item pada aplikasi ini</h4>
 <br>
 
 </div>
 
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form" onsubmit="return false;">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="col-form-label">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="amount" class="col-form-label">Amount:</label>
+                        <input type="text" class="form-control" id="amount" name="amount"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="col-form-label">Price:</label>
+                        <input type="number" class="form-control" id="price" name="price"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="col-form-label">Description:</label>
+                        <textarea class="form-control" id="description" name="description"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="category" class="col-form-label">Category:</label>
+                        <textarea class="form-control" id="category" name="category"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+            </div>
+        </div>
+    </div>
+</div>
 
+<script>
+    async function getProducts() {
+        return fetch("{% url 'main:get_product_json' %}").then((res) => res.json());
+    }
+
+    async function refreshProducts() {
+        document.getElementById("product_table").innerHTML = ""
+        const products = await getProducts();
+        let htmlString = `<table class="table table-hover table-bordered"><thead class="table-dark">
+            <tr>
+                <th scope="col" class="text-center align-middle">Nama Matkul</th>
+                <th scope="col" class="text-center align-middle">SKS</th>
+                <th scope="col" class="text-center align-middle">Deskripsi</th>
+                <th scope="col" class="text-center align-middle">Kapasitas</th>
+                <th scope="col" class="text-center align-middle">Kategori</th>
+                <th scope="col" class="text-center align-middle">Edit</th>
+            </tr>
+            </thead>
+            <tbody>`;
+        products.forEach((item) => {
+            htmlString += `
+            <tr>
+                <td class="px-3" scope="row">${item.fields.name}</td>
+                <td>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a href="decrement_amount/${item.pk}">
+                            <button class="btn btn-light">-</button>
+                        </a>
+                        <span id="amount${item.pk}">${item.fields.amount}</span>
+                        <a href="increment_amount/${item.pk}">
+                            <button class="btn btn-light">+</button>
+                        </a>
+                    </div>
+                </td>
+                <td>${item.fields.description}</td>
+                <td>${item.fields.price}</td>
+                <td>${item.fields.category}</td>
+                <td class="text-center align-middle">
+                    <a href="delete_item/${item.pk}">
+                        <button class="btn btn-secondary btn-sm">Hapus</button>
+                    </a>
+                </td>
+            </tr>`;
+        });
+
+        htmlString += `</tbody></table>`;
+        document.getElementById("product_table").innerHTML = htmlString;
+    }
+
+    refreshProducts();
+
+    function addProduct() {
+        fetch("{% url 'main:add_product_ajax' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshProducts)
+
+        document.getElementById("form").reset()
+        return false
+    }
+
+    document.getElementById("button_add").onclick = addProduct
+    
+</script>
 
 {% endblock content %}
